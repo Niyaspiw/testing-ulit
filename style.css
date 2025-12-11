@@ -1,0 +1,310 @@
+/* (Variables section remains the same) */
+:root {
+    /* Light Theme (Default) */
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --bg-color: #f3f4f6;       /* Main Background */
+    --card-bg: #ffffff;        /* Card/Footer Background */
+    --text-color: #1f2937;     /* Main Text */
+    --text-light: #6b7280;     /* Secondary Text */
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Dark Theme Overrides */
+html[data-theme="dark"] {
+    --primary-color: #60a5fa; 
+    --secondary-color: #3b82f6;
+    --bg-color: #0f172a;       /* Deep dark blue background */
+    --card-bg: #1e293b;        /* Dark card background */
+    --text-color: #f1f5f9;     /* Light text */
+    --text-light: #94a3b8;
+    --nav-bg: rgba(15, 23, 42, 0.9);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+/* Global and Core Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+body {
+    background-color: var(--bg-color); 
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* (Navigation styles remain the same) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: var(--nav-bg); 
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color); 
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon-btn {
+    background: transparent;
+    border: 2px solid var(--text-color); 
+    color: var(--text-color); 
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* (Hero styles remain the same) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    padding-top: 80px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap-reverse;
+}
+
+.text-container {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.text-container h3 {
+    font-size: 1.5rem;
+    color: var(--text-light); 
+}
+
+.text-container h1 {
+    font-size: 3.5rem;
+    margin: 10px 0;
+    color: var(--primary-color);
+}
+
+.text-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#profile-pic {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.5s ease, border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+#profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* (Button styles remain the same) */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-small:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* (Skills & Certs styles remain the same) */
+.section {
+    padding: 80px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+.skills-grid, .cert-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-card, .cert-card {
+    background: var(--card-bg); 
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, background var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.skill-card:hover, .cert-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-card i, .cert-icon i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* --- Contact Section --- */
+.contact-details {
+    display: flex;
+    flex-direction: column; /* Stack contact links vertically */
+    gap: 15px;
+    max-width: 500px;
+    margin: 20px auto 0;
+}
+
+.contact-box p {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--text-light);
+    transition: color 0.3s;
+}
+
+.contact-link i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--card-bg); 
+    color: var(--text-light);
+    border-top: 1px solid var(--text-light);
+}
+
+/* Responsive Design (Mobile) */
+@media (max-width: 768px) {
+    /* (Responsive styles remain the same) */
+    .navbar {
+        padding: 1rem 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-content {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .text-container {
+        padding-right: 0;
+        margin-top: 20px;
+    }
+
+    .text-container h1 {
+        font-size: 2.5rem;
+    }
+
+    #profile-pic {
+        width: 250px;
+        height: 250px;
+    }
+}
